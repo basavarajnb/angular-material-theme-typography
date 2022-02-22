@@ -2,5 +2,20 @@
   <h1>CIA app works</h1>
 </mat-toolbar>
 <div class="container pt-3">
-  <app-disclaimer></app-disclaimer>
+  <div class="row">
+    <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+      <mat-icon (click)="back()">arrow_back</mat-icon>
+    </button>
+  </div>
+  <ng-container [ngSwitch]="appRoutes">
+    <app-disclaimer
+      *ngSwitchCase="appRoutesEnum.Disclaimers"
+      (accepted)="disclaimersAccepted()"
+      (rejected)="disclaimersRejected()"
+    ></app-disclaimer>
+    <app-widget *ngSwitchCase="appRoutesEnum.Main"></app-widget>
+    <div *ngSwitchCase="appRoutesEnum.DisclaimersRejected" class="b-bold">
+      No score for you
+    </div>
+  </ng-container>
 </div>

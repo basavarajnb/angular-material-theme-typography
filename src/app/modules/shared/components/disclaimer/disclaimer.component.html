@@ -28,7 +28,7 @@
   </blockquote>
   
   <div class="d-flex justify-content-center">
-    <button class="me-3" mat-raised-button color="primary">Accept</button>
-    <button mat-raised-button>Decline</button>
+    <button (click)="accepted.emit()" class="me-3" mat-raised-button color="primary">Accept</button>
+    <button (click)="rejected.emit()" mat-raised-button>Decline</button>
   </div>
   

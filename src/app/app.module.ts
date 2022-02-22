@@ -6,26 +6,26 @@ import { CreditHistoryComponent } from './credit-history/credit-history.componen
 import { ProductOfferingsComponent } from './product-offerings/product-offerings.component';
 import { HistoricalLineGraphComponent } from './historical-line-graph/historical-line-graph.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { SharedModule } from './modules/shared/shared.module';
+import { WidgetModule } from './modules/widget/widget.module';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreditHistoryComponent,
     ProductOfferingsComponent,
-    HistoricalLineGraphComponent
+    HistoricalLineGraphComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatToolbarModule,
+    MaterialModule,
     SharedModule,
+    WidgetModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { CreditHistoryComponent } from './credit-history/credit-history.component';
 import { ProductOfferingsComponent } from './product-offerings/product-offerings.component';
 import { HistoricalLineGraphComponent } from './historical-line-graph/historical-line-graph.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { HistoricalLineGraphComponent } from './historical-line-graph/historical
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

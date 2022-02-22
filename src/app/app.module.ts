@@ -7,6 +7,8 @@ import { ProductOfferingsComponent } from './product-offerings/product-offerings
 import { HistoricalLineGraphComponent } from './historical-line-graph/historical-line-graph.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

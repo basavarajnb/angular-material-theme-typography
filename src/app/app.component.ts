@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AppRoutes } from './common/models/app.model';
 import { Stack } from './common/models/stack.model';
@@ -8,16 +9,24 @@ import { Stack } from './common/models/stack.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'cia';
+  title = 'CIA';
   public appRoutesEnum = AppRoutes;
   public appRoutes = AppRoutes.Disclaimers;
   public appRouteStack = new Stack<AppRoutes>();
 
-  constructor() {}
+  constructor(private readonly httpClient: HttpClient) {}
 
   ngOnInit(): void {
+    this.getFicoScore();
     this.appRouteStack.push(this.appRoutes);
   }
+
+  public getFicoScore() {
+    this.httpClient.get('https://cia-test-api-1.azurewebsites.net/api/CreditReport').subscribe((response) => {
+      console.log('response => ', response);
+    })
+  }
+
 
   public disclaimersAccepted() {
     this.appRoutes = AppRoutes.Main;
@@ -30,7 +39,9 @@ export class AppComponent implements OnInit {
   }
 
   public back() {
-    this.appRouteStack.pop();
-    this.appRoutes = this.appRouteStack.peek() as AppRoutes;
+    if (this.appRouteStack.size() > 0) {
+      this.appRouteStack.pop();
+      this.appRoutes = this.appRouteStack.peek() as AppRoutes;
+    }
   }
 }

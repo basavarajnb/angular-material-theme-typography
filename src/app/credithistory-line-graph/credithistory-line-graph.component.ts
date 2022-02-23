@@ -1,7 +1,6 @@
 declare var require: any;
 
 import { Component, OnInit } from '@angular/core';
-import { Chart } from 'angular-highcharts';
 import * as Highcharts from 'highcharts';
 
 const HighchartsMore = require('highcharts/highcharts-more.src');

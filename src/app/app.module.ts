@@ -14,6 +14,7 @@ import { CiaChartsModule } from './modules/charts/charts.module';
 import { MatTableModule } from '@angular/material/table';
 import {MatNativeDateModule} from '@angular/material/core';
 import { CredithistoryLineGraphComponent } from './credithistory-line-graph/credithistory-line-graph.component';
+import { GenericLegendComponent } from './generic-legend/generic-legend.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CredithistoryLineGraphComponent } from './credithistory-line-graph/cred
     ProductOfferingsComponent,
     HistoricalLineGraphComponent,
     CredithistoryLineGraphComponent,
+    GenericLegendComponent,
   ],
   imports: [
     BrowserModule,

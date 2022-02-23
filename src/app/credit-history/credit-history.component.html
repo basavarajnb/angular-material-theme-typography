@@ -1,7 +1,7 @@
 <p>Credit History</p>
 
 <app-credithistory-line-graph>
-    
+
 </app-credithistory-line-graph>
 <table mat-table [dataSource]="CredHistory" class = "mat-elevation-z8">
 
@@ -26,6 +26,11 @@
 
   </table>
 <br>
+
+<app-generic-legend 
+  [title]="title" 
+  [legends]="legends">
+</app-generic-legend>
 
   <a (click)="goToProductOfferings()" mat-raised-button href="">Product Offerings</a>
 

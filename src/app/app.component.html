@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <h1>CIA app works</h1>
+  <h1>Credit Info App</h1>
 </mat-toolbar>
 <div class="container pt-3">
   <div class="row">
@@ -17,5 +17,9 @@
     <div *ngSwitchCase="appRoutesEnum.DisclaimersRejected" class="b-bold">
       No score for you
     </div>
+    <app-credit-history
+    *ngSwitchCase="appRoutesEnum.Main">
+
+    </app-credit-history>
   </ng-container>
 </div>

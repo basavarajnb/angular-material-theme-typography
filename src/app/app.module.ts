@@ -11,6 +11,8 @@ import { SharedModule } from './modules/shared/shared.module';
 import { WidgetModule } from './modules/widget/widget.module';
 import { MaterialModule } from './material.module';
 import { CiaChartsModule } from './modules/charts/charts.module';
+import { MatTableModule } from '@angular/material/table';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { CiaChartsModule } from './modules/charts/charts.module';
     MaterialModule,
     SharedModule,
     WidgetModule,
+    MatNativeDateModule,
+    MatTableModule,
     CiaChartsModule,
   ],
   providers: [

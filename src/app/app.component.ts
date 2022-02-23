@@ -9,7 +9,7 @@ import { Stack } from './common/models/stack.model';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'CIA';
+  title = 'Credit Info App';
   public appRoutesEnum = AppRoutes;
   public appRoutes = AppRoutes.Disclaimers;
   public appRouteStack = new Stack<AppRoutes>();
@@ -37,6 +37,12 @@ export class AppComponent implements OnInit {
     this.appRouteStack.push(this.appRoutes);
     this.appRoutes = AppRoutes.DisclaimersRejected;
   }
+
+  public goToCreditHistory() {
+    this.appRouteStack.push(this.appRoutes);
+    this.appRoutes = AppRoutes.CreidtHistory;
+  }
+
 
   public back() {
     if (this.appRouteStack.size() > 0) {

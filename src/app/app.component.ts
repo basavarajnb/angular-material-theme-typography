@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   public appRoutesEnum = AppRoutes;
   public appRoutes = AppRoutes.Disclaimers;
   public appRouteStack = new Stack<AppRoutes>();
+  public isBackButtonVisible = false;
 
   constructor(private readonly httpClient: HttpClient) {}
 
@@ -29,8 +30,7 @@ export class AppComponent implements OnInit {
 
 
   public disclaimersAccepted() {
-    this.appRoutes = AppRoutes.Main;
-    this.appRouteStack.push(this.appRoutes);
+    this.addToRouteStack(AppRoutes.Main);
   }
 
   public disclaimersRejected() {
@@ -38,9 +38,14 @@ export class AppComponent implements OnInit {
     this.appRoutes = AppRoutes.DisclaimersRejected;
   }
 
-  public goToCreditHistory() {
+  public gotoCreditHistory() {
+    this.addToRouteStack(AppRoutes.CreditHistory);
+  }
+
+  public addToRouteStack(route: AppRoutes) {
+    this.appRoutes = route;
     this.appRouteStack.push(this.appRoutes);
-    this.appRoutes = AppRoutes.CreidtHistory;
+    this.isBackButtonVisible = this.appRouteStack.size() > 1;
   }
 
 
@@ -48,6 +53,7 @@ export class AppComponent implements OnInit {
     if (this.appRouteStack.size() > 0) {
       this.appRouteStack.pop();
       this.appRoutes = this.appRouteStack.peek() as AppRoutes;
+      this.isBackButtonVisible = this.appRouteStack.size() > 1;
     }
   }
 }

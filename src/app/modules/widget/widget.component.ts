@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-widget',
@@ -8,14 +7,14 @@ import { Router } from '@angular/router';
 })
 export class WidgetComponent implements OnInit {
   @Output() public creditHistory = new EventEmitter();
-  constructor(private route: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   goToCreditHistory()
   {
-    this.route.navigateByUrl("credit-history")
+    this.creditHistory.emit();
   }
 
 }

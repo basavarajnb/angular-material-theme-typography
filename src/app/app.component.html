@@ -2,10 +2,8 @@
   <h1>Morgan Stanley Online - Credit Info App</h1>
 </mat-toolbar>
 <div class="container pt-3">
-  <div class="row">
-    <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
-      <mat-icon (click)="back()">arrow_back</mat-icon>
-    </button>
+  <div *ngIf="isBackButtonVisible">
+    <button mat-button (click)="back()"><mat-icon>chevron_left</mat-icon> Back</button>
   </div>
   <ng-container [ngSwitch]="appRoutes">
     <app-disclaimer
@@ -13,13 +11,12 @@
       (accepted)="disclaimersAccepted()"
       (rejected)="disclaimersRejected()"
     ></app-disclaimer>
-    <app-widget *ngSwitchCase="appRoutesEnum.Main"></app-widget>
+    <app-widget *ngSwitchCase="appRoutesEnum.Main"
+     (creditHistory)="gotoCreditHistory()"></app-widget>
     <div *ngSwitchCase="appRoutesEnum.DisclaimersRejected" class="b-bold">
       No score for you
     </div>
-    <app-credit-history
-    *ngSwitchCase="appRoutesEnum.Main">
-
+    <app-credit-history *ngSwitchCase="appRoutesEnum.CreditHistory">
     </app-credit-history>
   </ng-container>
 </div>

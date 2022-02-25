@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "./assets/styles/theme-palette";
+@import "./assets/styles/layout";
+@import "./assets/styles/base";
 
 html,
 body {
@@ -9,4 +11,5 @@ body {
 body {
   margin: 0;
   font-family: 'Karla';
+  background-color: #ededed;
 }

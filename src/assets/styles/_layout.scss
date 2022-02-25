@@ -1,0 +1,86 @@
+.app-container {
+    width: 100%;
+  }
+  
+  .app-header {
+    width: 100%;
+    background-color: white;
+  
+    .app-header-container {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1140px;
+      width: 100%;
+      padding-top: 40px;
+      padding-bottom: 30px;
+    }
+  }
+  
+  .app-menu-container {
+    height: 44px;
+    background-color: #013461;
+  
+    nav {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1140px;
+      width: 100%;
+  
+      div {
+        line-height: 44px;
+        font-weight: 400;
+        cursor: pointer;
+  
+        a {
+          color: #fff;
+          padding: 0 18px;
+          height: 44px;
+          text-decoration: none;
+          background-color: #187aba;
+          display: inline-block;
+        }
+      }
+    }
+  }
+  
+  .main-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1140px;
+    width: 100%;
+  
+    .main-summary {
+      height: 100px;
+      background-color: white;
+      margin-bottom: 24px;
+    }
+  
+    .main-section-container {
+      display: flex;
+      display: -ms-flexbox;
+      flex: 1;
+      flex-direction: row;
+      margin-bottom: 0;
+      min-height: 0;
+      min-width: 0;
+  
+      .main-section {
+        margin-bottom: 0;
+        min-width: calc(100% - 274px);
+  
+        .section-one {
+          height: 100px;
+        }
+      }
+      .widget-section {
+        margin-left: 24px;
+        max-width: 250px;
+        width: 250px;
+  
+        .widget-one {
+          height: 150px;
+          width: 100%;
+        }
+      }
+    }
+  }
